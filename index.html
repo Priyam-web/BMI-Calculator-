@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h3>TB BMI CALCULATOR</h3>
+
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="/contact.html" title="Contact Us">Contact Us</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+</body>
+<main>
+    <div class="bmi-calculator">
+        <p>
+        <label for="weight">Enter Your weight-KG</label>
+        <input type="number" name="weight" id="weight">
+        </p>
+        <p>
+        <label for="height">Enter Your height-cms</label>
+        <input type="number" name="height" id="height">
+        </p>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <span id="bmi">----</span>
+
+    </div>
+    <div id="bmi-status">
+        <p>--</p>
+
+    </div>
+</main>
+<footer>
+    <p>&COPY;The Right Are Reserved By TB-2023</p>
+    <nav>
+        <ul>
+            <li>
+                <a href="/policies.html" title="policies">Policies</a>
+            </li>
+            <li>
+                <a href="/contact.html" title="Contact Us">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+</footer>
+<script>
+    function calculateBMI(){
+        let weight=parseInt(document.getElementById("weight").value);
+        //divide height by 100 to convert cm into m.....
+        let heightInMeters=parseInt(document.getElementById("height").value)/100;
+
+        let bmi=weight / Math.pow(heightInMeters,2);
+        document.getElementById("bmi").textContent=bmi.toFixed(1);
+
+        if(bmi<18.5)
+        {
+            document.querySelector("#bmi-status p").textContent="You are Underweight";
+            
+        }else if(bmi>18.5 && bmi<24.9)
+        {
+            document.querySelector("#bmi-status p").textContent="You Are Normal";
+        }else if(bmi>24.9 && bmi<29.9)
+        {
+            document.querySelector("#bmi-status p").textContent="You Are Overweight";
+        }else if(bmi>29.9 && bmi<30.9)
+        {
+            document.querySelector("#bmi-status p").textContent="Bsdk Khana kam kar lodu";
+        }
+
+        
+
+    }
+</script>
+</html>

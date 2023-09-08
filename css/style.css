@@ -1,0 +1,48 @@
+header{
+    display: flex;
+    justify-content: space-around;
+}
+body{
+    background-color: antiquewhite;
+}
+header,footer,main{
+    max-width: 900px;
+    margin: auto 0px;
+    background-color: bisque;
+}
+main div{
+    max-width: 50%;
+    margin: 0 auto;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+nav li{
+    margin-left: 10px;
+
+}
+footer{
+    text-align: center;
+
+}
+footer nav{
+    display: flex;
+    justify-content: center;
+}
+button{
+    display: block;
+}
+header nav a{
+    font-size: larger;
+    color: black;
+}
+footer nav a{
+    font-size: small;
+    color: black;
+}
+a:hover{
+    color: brown;
+    
+}
